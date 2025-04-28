@@ -1,0 +1,303 @@
+/* Style Art Déco Luxueux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Palette Art Déco luxueuse */
+    --color-primary: #0c0f0a;
+    --color-secondary: #c0b283;
+    --color-accent: #d4af37;
+    /* Or */
+    --color-bg: #f5f5f5;
+    --color-card: #ffffff;
+    --color-text: #212121;
+    --color-text-light: #696969;
+    --color-border: #e0e0e0;
+    --color-frame: #c0b283;
+    --color-frame-shadow: rgba(192, 178, 131, 0.3);
+
+    /* Typographie élégante */
+    --font-title: 'Playfair Display', serif;
+    --font-text: 'Marcellus', serif;
+
+    /* Dimensions et effets */
+    --border-radius: 0px;
+    /* Art déco = lignes droites, angles marqués */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition-normal: all 0.3s ease;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Marcellus&display=swap');
+
+body {
+    font-family: var(--font-text);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(45deg, var(--color-frame) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--color-frame) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--color-frame) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--color-frame) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* En-tête Art Déco */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    background-color: var(--color-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background:
+        linear-gradient(45deg, var(--color-accent) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--color-accent) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--color-accent) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--color-accent) 75%);
+    background-size: 20px 20px;
+}
+
+header::before {
+    top: 0;
+}
+
+header::after {
+    bottom: 0;
+}
+
+header h1 {
+    font-family: var(--font-title);
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+header h1::before,
+header h1::after {
+    content: '◆';
+    font-size: 0.8em;
+    color: var(--color-accent);
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+/* Bouton Art Déco */
+.controls {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    padding: 12px 35px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-family: var(--font-title);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+/* Conteneur Art Déco */
+.artwork-container {
+    background-color: var(--color-card);
+    box-shadow: var(--shadow-md);
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid var(--color-accent);
+}
+
+/* Motifs géométriques Art Déco dans les coins */
+.artwork-container::before,
+.artwork-container::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-accent);
+}
+
+.artwork-container::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.artwork-container::after {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+.artwork-frame {
+    margin: 0 auto 30px;
+    border: 10px solid var(--color-frame);
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 20px var(--color-frame-shadow),
+        inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Motif Art Déco sur le cadre */
+.artwork-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 10px;
+    background: repeating-linear-gradient(90deg,
+            var(--color-frame),
+            var(--color-frame) 5px,
+            var(--color-accent) 5px,
+            var(--color-accent) 10px);
+}
+
+.artwork-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition-normal);
+}
+
+.artwork-info {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-top: 1px solid var(--color-border);
+}
+
+.artwork-info h2 {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.artwork-description {
+    font-family: var(--font-text);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    text-align: justify;
+}
+
+.artwork-description::first-letter {
+    font-size: 2.5em;
+    font-family: var(--font-title);
+    color: var(--color-accent);
+    float: left;
+    line-height: 0.8;
+    margin-right: 6px;
+}
+
+/* Pied de page Art Déco */
+footer {
+    text-align: center;
+    padding: 25px 0;
+    color: white;
+    background-color: var(--color-primary);
+    margin-top: 60px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background:
+        linear-gradient(45deg, var(--color-accent) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--color-accent) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--color-accent) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--color-accent) 75%);
+    background-size: 20px 20px;
+}
+
+/* Spinner Art Déco */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-accent);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .artwork-container {
+        padding: 25px;
+    }
+
+    .artwork-frame {
+        border-width: 8px;
+    }
+
+    header h1::before,
+    header h1::after {
+        display: none;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'Art - Découvrez des œuvres aléatoires</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>GALERIE D'ART VIRTUELLE</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="artwork-display" class="artwork-display hidden">
+            <div class="artwork-container">
+                <div class="artwork-frame">
+                    <img id="artwork-image" src="" alt="Œuvre d'art">
+                </div>
+                <div class="artwork-info">
+                    <h2 id="artwork-title"></h2>
+                    <div id="artwork-content" class="artwork-description"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <button id="randomArtButton" class="btn-primary">Découvrir une œuvre</button>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Galerie d'Art Virtuelle</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
